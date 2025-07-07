@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amber-roast-sign-up</title>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body class="box-border bg-gray-950">
+    <header class="p-4 z-90 sm:z-0">
+        <div class="container-lg text-xl md:text-3xl">
+        <i class="fa-solid fa-mug-hot text-2xl md:text-4xl text-orange-400"></i>
+        <span class="px-2 text-orange-400">Ember Roast</span>
+    </div>
+    </header>
+    <main class="flex justify-center items-center">
+        <img class="h-120 w-110 sm:h-150 sm:w-140 md:h-300 md:w-280 absolute bottom-60 left-40 sm:bottom-60 sm:left-80 md:bottom-6 md:left-90 rotate-45" src="assets/signup.webp" alt="signup">
+        <div class="flex flex-col sm:flex-row h-200 sm:h-120 w-200 mx-3 sm:mx-0 sm:justify-between text-lg sm:text-2xl border border-gray-700 rounded-2xl mb-5 sm:mb-0 mt-5 backdrop-blur-md">
+            <!-- Left section (form) -->
+            <form id="form" class="flex flex-col w-1/2 text-gray-50 p-6">
+                <label class="mb-2 cursor-pointer" for="name">Name</label>
+                <input class="mb-3 bg-gray-950 border-gray-200 rounded-2xl p-1" type="text" id="name">
+
+                <label class="mb-2 cursor-pointer" for="email">Email</label>
+                <!-- Wrong email alert -->
+                <p id="emailError" class="text-sm p-1 hidden">
+                    <i class="fa-solid fa-circle-exclamation px-1 text-red-500"></i><span>Invalid Email</span>
+                </p>
+                <!-- /*/*/* */*/*/ -->
+
+                <input class="mb-3 border border-2 border-white rounded-2xl p-1" type="email" id="email" onkeypress="clearWarning()">
+                <label class="mb-2 cursor-pointer" for="passtry">Password</label>
+                <input class="mb-3 border border-2 border-white rounded-2xl p-1" type="password" id="passtry" onkeypress="clearWarning()">
+                <label class="mb-2 cursor-pointer" for="passconfirm">Confirm Password</label>
+
+                <!-- Different password alert -->
+                 <p id="passError" class="text-sm p-1 hidden">
+                    <i class="fa-solid fa-circle-exclamation px-1 text-red-500"></i><span>Passwords do not match</span>
+                 </p>
+                 <!-- /*/*/* */*/*/ -->
+
+                <!-- No password alert -->
+                 <p id="noPass" class="text-sm p-1 hidden">
+                    <i class="fa-solid fa-circle-exclamation px-1 text-red-500"></i><span>Please enter a password</span>
+                 </p>
+                 <!-- /*/*/* */*/*/ -->
+
+                <input class="mb-3 bg-gray-950 border-gray-200 rounded-2xl p-1" type="password" id="passconfirm" onkeypress="clearWarning()">
+                <button class="bg-orange-400 hover:bg-orange-500 p-3 w-30 sm:w-50 rounded-2xl cursor-pointer" onclick="credentialChecker()">Sign up</button>
+            </form>
+
+            <!-- This will act as a vertical line in between -->
+            <div class="bg-gray-400 border border-gray-400 w-0 h-12- mt-5 mb-5 hidden sm:block"></div>
+            <hr class="border-gray-400 bg-gray-400 mx-3">
+
+            <!-- Right section (login through google/facebook) -->
+             <div class="flex flex-col text-gray-50 text-lg sm:text-2xl justify-center items-center gap-10 sm:gap-12 w-1/2 p-3 sm:p-6">
+                <span class="text-sm">Sign up with</span>
+                <a class="rounded-full w-3/4 bg-blue-500 p-3 cursor-pointer" href="www.google.com">
+                    <i class="fa-brands fa-google"></i>
+                    Google
+                </a>
+                <a class="rounded-full w-3/4 bg-blue-500 p-3 cursor-pointer" href="www.facebook.com">
+                    <i class="fa-brands fa-facebook"></i>
+                    Facebook
+                </a>
+                <a class="rounded-full w-3/4 bg-blue-500 p-3 cursor-pointer" href="github.com/paritoshAuminus">
+                    <i class="fa-brands fa-github"></i>
+                    Github
+                </a>
+             </div>
+        </div>
+    </main>
+
+    <script src="signup.js"></script>
+</body>
+</html>

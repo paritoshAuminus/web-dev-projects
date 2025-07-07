@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact manager</title>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesone cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="box-border flex justify-center align-center text-xl bg-gray-900 text-gray-900">
+    <!-- Main parent containing the whole app body -->
+    <main class="h-150 w-100 bg-gray-50 relative">
+        <!-- Header -->
+        <header class="flex justify-between items-center bg-white sticky top-0 left-0 right-o shadow shadow-xl">
+            <h1 class="text-3xl p-3">Contact manager</h1>
+            <i id="contactAdder" class="fa-solid fa-plus mr-3 text-2xl cursor-pointer"></i>
+        </header>
+        <!-- Parent div (form) -->
+         <div id="form" class="hidden h-100 w-95 absolute p-4 mt-6 mx-2 bg-gray-200 rounded-xl">
+             <i id="formClose" class="fa-solid fa-multiply absolute right-3 top-3 text-2xl text-red-500 cursor-pointer"></i>
+             <!-- Main form (contactForm) -->
+             <form id="contactForm" class="flex flex-col h-full w-full gap-4">
+                 <label for="name" id="userName">Name</label>
+                 <input type="text" id="name" class="border border-1 border-gray-900 rounded-lg">
+                 <label for="number">Mobile</label>
+                 <input type="tel" id="phone" class="border border-1 border-gray-900 rounded-lg">
+                 <label for="gmail">Gmail</label>
+                 <input type="email" id="gmail" class="border border-1 border-gray-900 rounded-lg">
+                 <div class="flex w-2/7 justify-between items-center">
+                     <button type="submit" class="fa-solid fa-check p-3 text-white rounded-full bg-emerald-500 hover:bg-emerald-400"></button>
+                     <button type="reset" class="fa-solid fa-rotate-right p-3 text-white rounded-full bg-blue-500 hover:bg-blue-400"></button>
+                 </div>
+             </form>
+            <!-- Edit form for updating contacts -->
+            <form class="editForm hidden flex flex-col h-full w-full gap-4 bg-gray-100 rounded-xl mt-4 p-4">
+                <label for="editName">Name</label>
+                <input type="text" id="editName" class="border border-1 border-gray-900 rounded-lg">
+                <label for="editNumber">Mobile</label>
+                <input type="tel" id="editNumber" class="border border-1 border-gray-900 rounded-lg">
+                <label for="editGmail">Gmail</label>
+                <input type="email" id="editGmail" class="border border-1 border-gray-900 rounded-lg">
+                <div class="flex w-2/7 justify-between items-center">
+                    <button type="submit" class="fa-solid fa-check p-3 text-white rounded-full bg-emerald-500 hover:bg-emerald-400"></button>
+                    <button type="reset" class="fa-solid fa-rotate-right p-3 text-white rounded-full bg-blue-500 hover:bg-blue-400"></button>
+                </div>
+            </form>
+            <div id="contactSaved" class="hidden h-full w-full flex flex-col justify-center items-center gap-3 bg-gray-200 size-15">
+                <div class="rounded-full bg-emerald-500">
+                    <i class="fa-solid fa-check text-3xl p-4 text-white"></i>
+                </div>
+                <span>Contact added succesfuly</span>
+            </div>
+         </div>
+
+        <!-- Main content when there are no contacts -->
+        
+        <!-- Main content to show cotact list (if any) -->
+         <main id="main" class="h-full w-full px-3 mt-4">
+            <span class="text-sm text-gray-500">Your contacts</span>
+            <!-- when there are no contacts -->
+            <main id="noContactsYet" class="hidden flex h-70 w-full justify-center items-center mt-6">
+                <span class="text-gray-500">No contacts here</span>
+            </main>
+            <!-- contact list -->
+            <div id="contactList" class="hidden">
+                <!-- The contact code will h-full w-full flex flex-col gap-1 items-center be here -->
+            </div>
+         </main>
+  
+                 <!-- new div 'contactTab' gets added here -->
+                  <!-- Inside of it is the main div -->  </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

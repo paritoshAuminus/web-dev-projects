@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe app</title>
+  <!-- tailwind cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body class="box-border font-['Baloo Bhai 2'] bg-gray-50">
+
+  <header class="flex items-center justify-between text-white h-24 w-full bg-rose-600 p-6 text-3xl sticky top-0 z-100">
+    <h2 class="font-bold">Recipe App</h2>
+    <button
+      class="add-button rounded-lg bg-gray-200 p-2 text-rose-600 text-bold hover:bg-white text-rose-700 cursor-pointer">
+      <i class="fa-solid fa-add p-1"></i>
+    </button>
+  </header>
+
+  <!-- recipe adding form -->
+  <form id="add-recipe-form"
+    class="hidden max-w-xl mx-auto mt-10 bg-white p-8 rounded-lg shadow-lg flex flex-col gap-4 transition transform-y">
+    <div class="flex justify-between">
+      <h3 class="text-2xl font-bold text-rose-600 mb-4">Add a Recipe</h3>
+      <i id="close-add-form" class="fa-solid fa-multiply text-xl text-rose-600 hover:text-rose-700 cursor-pointer"></i>
+    </div>
+    <input type="text" id="title" placeholder="Title"
+      class="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-rose-400" />
+    <input type="text" id="description" placeholder="Description"
+      class="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-rose-400" />
+    <input class="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-rose-400 w-full"
+      type="text" id="tags" placeholder="Tags (comma separated)" />
+    <ul id="tag-suggestions" class="flex flex-wrap gap-2 mt-2 mb-2">
+      <!-- Dynamic tag suggestions (li) here -->
+    </ul>
+    <button type="submit"
+      class="mt-4 bg-rose-600 text-white font-bold py-3 rounded-md hover:bg-rose-700 transition">Submit Recipe</button>
+  </form>
+  <div id="recipe-saved"
+    class="hidden max-w-xl mx-auto mt-10 bg-white p-8 rounded-lg shadow-lg flex flex-col items-center gap-4 transition transform-y">
+    <img src="./assets/saved-tomato.png" class="size-55" alt="Happy tomato image">
+    <span class="text-bold text-3xl font-bold text-rose-600">Recipe Added Successfully!</span>
+  </div>
+
+
+  <!-- Main when there are no recipes in the list -->
+  <main id="no-recipes-yet" class="flex flex-col items-center justify-center text-2xl text-gray-700 font-bold">
+    <img src="./assets/tomato.png" alt="Tomato Image">
+    <p>No recipes here... <span class="add-button text-rose-600 hover:text-rose-700 cursor-pointer">Create Now!</span>
+    </p>
+  </main>
+
+  <!-- main when there are recipes -->
+  <main id="recipe-list" class="hidden flex flex-col items-center justify-center gap-2 text-2xl">
+    <div class="max-w-xl w-full px-3">
+      <span class="text-sm text-gray-500">Your recipes here</span>
+    </div>
+
+    <!-- display dynamic recipe card via javascript -->
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

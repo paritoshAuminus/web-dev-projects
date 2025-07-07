@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="box-border flex justify-center items-center bg-gray-600 text-3xl text-white">
+    <!-- Main (calculator body) -->
+    <main class="w-2/5 h-150 bg-black p-4">
+        <!-- Upper div (calculator results) -->
+        <div class="h-1/5 w-full">
+            <div  class="float-end">
+                <span id="display"></span>
+            </div>
+        </div>
+        <!-- lower div (calculator buttons) -->
+        <div class="h-4/5 w-full py-4">
+            <!-- first keys -->
+            <div class="buttonContainer">
+                <button id="clear" class="btn funcBtn">AC</button>
+                <button id="x" class="btn funcBtn" onclick="backspace()">X</button>
+                <button class="btn funcBtn" onclick="valueSender('%')">%</button>
+                <button class="btn funcBtn" onclick="valueSender('/')">/</button>
+             </div>
+            <!-- second keys -->
+             <div class="buttonContainer">
+                 <button class="btn digitBtn" onclick="valueSender(7)">7</button>
+                 <button class="btn digitBtn" onclick="valueSender(8)">8</button>
+                 <button class="btn digitBtn" onclick="valueSender(9)">9</button>
+                 <button class="btn funcBtn" onclick="valueSender('*')">*</button>
+             </div>
+            <!-- third keys -->
+             <div class="buttonContainer">
+                 <button class="btn digitBtn" onclick="valueSender(4)">4</button>
+                 <button class="btn digitBtn" onclick="valueSender(5)">5</button>
+                 <button class="btn digitBtn" onclick="valueSender(6)">6</button>
+                 <button class="btn funcBtn" onclick="valueSender('-')">-</button>
+             </div>
+            <!-- fourth keys -->
+             <div class="buttonContainer">
+                 <button class="btn digitBtn" onclick="valueSender(1)">1</button>
+                 <button class="btn digitBtn" onclick="valueSender(2)">2</button>
+                 <button class="btn digitBtn" onclick="valueSender(3)">3</button>
+                 <button class="btn funcBtn" onclick="valueSender('+')">+</button>
+             </div>
+             <!-- fifth keys -->
+              <div class="buttonContainer">
+                  <button class="btn digitBtn text-gray-500">N/A</button>
+                  <button class="btn digitBtn" onclick="valueSender(0)">0</button>
+                  <button class="btn funcBtn" onclick="valueSender('.')">.</button>
+                  <button id="submit" class="btn funcBtn">=</button>
+              </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ember Roast</title>
+  
+  <!-- Tailwind cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  
+</head>
+
+<body class="box-border">
+
+  <!-- Header section -->
+  <section class="container-lg sticky top-0 left-0 right-0 flex justify-between items-center px-4 md:px-7 py-5 text-white bg-gray-950 z-90">
+    <div class="text-xl md:text-3xl">
+      <i class="fa-solid fa-mug-hot text-2xl md:text-4xl text-orange-400"></i>
+      <span class="px-2 text-orange-400">Ember Roast</span>
+    </div>
+    <button class="block md:hidden">
+      <i onclick="sidebarToggleOn()" class="fa-solid fa-bars text-xl pr-3 active:text-orange-400"></i>
+    </button>
+    <div class="hidden md:flex items-center text-2xl w-140 gap-6">
+      <a href="index.html" class="hover:text-orange-400 cursor-pointer">Home</a>
+      <a href="#menu" class="hover:text-orange-400 cursor-pointer">Menu</a>
+      <a href="#about" class="hover:text-orange-400 cursor-pointer">About</a>
+      <a href="#contact" class="hover:text-orange-400 cursor-pointer">Contact</a>
+      <a href="login.html" target="_blank" class="hover:text-orange-400 cursor-pointer">Log In</a>
+      <a href="#menu" class="bg-orange-400 rounded-xl px-3 py-2 hover:bg-orange-500 cursor-pointer">Order</a>
+    </div>
+  </section>
+  
+  <!-- Hero section -->
+  <section class="flex flex-col-reverse justify-between items-center gap-12 md:flex-row bg-gray-950 text-white text-center md:text-left px-10 md:px-32 py-10 md:py-30">
+    <div class="text-2xl md:text-3xl">
+      <p class="mb-5 md:mb-8">
+        Providing the best coffees<br>in the world Brewed to<br><span class="text-orange-400">Perfection</span>
+      </p>
+      <button href="#menu" class="bg-orange-400 hover:bg-orange-500 py-3 px-2 text-white rounded-xl mb-4 md:mb-0 cursor-pointer">Order Now</button>
+    </div>
+    <div class="size-40 md:size-80 bg-[url(assets/coffee-hero-section.png)] bg-cover bg-center"></div>
+
+    <!-- Side bar (only visible on small screens) -->
+   <div id="sidebar" class="hidden justify-center md:hidden fixed right-0 top-0 h-full w-64 bg-gray-950 text-white z-100">
+    <div class="flex flex-col p-5 gap-2 items-center text-xl w-full">
+      <i onclick="sidebarToggleOff()" class="fa-solid fa-xmark float-end fixed right-5 text-2xl active:text-orange-400"></i>
+      <a href="index.html" class="active:text-orange-400">Home</a>
+      <a href="#menu" class="active:text-orange-400">Menu</a>
+      <a href="#about" class="active:text-orange-400">About</a>
+      <a href="#contact" class="active:text-orange-400">Contact</a>
+      <a href="login.html" class="active:text-orange-400">Log In</a>
+      <a href="#" class="bg-orange-400 text-white rounded-xl px-3 py-2 active:bg-orange-500">Order</a>
+    </div>
+   </div>
+  </section>
+  
+  <!-- Menu section -->
+  <section id="menu" class="bg-gray-200 dark:bg p-8">
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 text-gray-700 gap-6">
+      
+      <!-- Item 1 -->
+      <div class="w-full h-100 bg-white p-5 rounded-xl shadow-xl grid align-content-around">
+        <div class="mb-4">
+          <img src="assets/burger-frenchfries.png" alt="" class="mx-auto size-50"/>
+        </div>
+        <div>
+          <h1 class="text-lg font-extrabold">
+            Burger-Frenchfries</h1>
+          <p class="text-lg mb-5">
+            Stacked high with flavor and crafted to satisfy every craving
+          </p>
+          <a href="order.html?name=burgerFrenchfries" class="bg-orange-400 text-white text-xl rounded-xl px-3 py-2">Buy</a>
+        </div>
+      </div>
+      
+      <!-- Item 2 -->
+      <div class="w-full h-100 bg-white p-5 rounded-xl shadow-xl grid align-content-around">
+        <div class="mb-4">
+          <img src="assets/cold-beverages.png" alt="" class="mx-auto size-50"/>
+        </div>
+        <div>
+          <h1 class="text-lg font-extrabold">
+            Cold Beverages</h1>
+          <p class="text-lg mb-5">
+            Refreshing, chilled beverages crafted to satisfy thirst
+          </p>
+          <a href="order.html?name=coldBeverages" class="bg-orange-400 text-white text-xl rounded-xl px-3 py-2">Buy</a>
+        </div>
+      </div>
+      
+      <!-- Item 3 -->
+      <div class="w-full h-100 bg-white p-5 rounded-xl shadow-xl grid align-content-around">
+        <div class="mb-4">
+          <img src="assets/desserts.png" alt="" class="mx-auto size-50"/>
+        </div>
+        <div>
+          <h1 class="text-lg font-extrabold">
+            Desserts</h1>
+          <p class="text-lg mb-5">
+            Dive deeper into the deep world of sweetness
+          </p>
+          <a href="order.html?name=desserts" class="bg-orange-400 text-white text-xl rounded-xl px-3 py-2">Buy</a>
+        </div>
+      </div>
+      
+      <!-- Item 4 -->
+      <div class="w-full h-100 bg-white p-5 rounded-xl shadow-xl grid align-content-around">
+        <div class="mb-4">
+          <img src="assets/hot-beverages.png" alt="" class="mx-auto size-50"/>
+        </div>
+        <div>
+          <h1 class="text-lg font-extrabold">
+            Hot Beverages</h1>
+          <p class="text-lg mb-5">
+            Soothe your soul with 
+            aromatic hot beverages.
+          </p>
+          <a href="order.html?name=hotBeverages" class="bg-orange-400 text-white text-xl rounded-xl px-3 py-2">Buy</a>
+        </div>
+      </div>
+      
+      <!-- Item 5 -->
+      <div class="w-full h-100 bg-white p-5 rounded-xl shadow-xl grid align-content-around">
+        <div class="mb-4">
+          <img src="assets/refreshment.png" alt="" class="mx-auto size-50"/>
+        </div>
+        <div>
+          <h1 class="text-lg font-extrabold">
+            Refreshments</h1>
+          <p class="text-lg mb-5">
+            Chill out with crisp, and revitalizing refreshing drinks
+          </p>
+          <a href="order.html?name=refreshments" class="bg-orange-400 text-white text-xl rounded-xl px-3 py-2">Buy</a>
+        </div>
+      </div>
+      
+      <!-- Item 6 -->
+      <div class="w-full h-100 bg-white p-5 rounded-xl shadow-xl grid align-content-around">
+        <div class="mb-4">
+          <img src="assets/special-combo.png" alt="" class="mx-auto size-50"/>
+        </div>
+        <div>
+          <h1 class="text-lg font-extrabold">
+            Special Combo</h1>
+          <p class="text-lg mb-5">
+            Bigger bites, our mega combos satisfy every craving!
+          </p>
+          <a href="order.html?name=specialCombo" class="bg-orange-400 text-white text-xl rounded-xl px-3 py-2">Buy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About section -->
+  <section id="about" class="p-10 md:p-20 bg-gray-950 text-white text-md flex flex-col items-center text-center italic">
+    <div class="bg-[url(assets/chef.jpg)] bg-cover bg-center size-50 rounded-full mb-5">
+    </div>
+    <p class="text-gray-50 text-shadow-lg text-lg text-center">
+      <p class="mb-5">
+        "Every dish I make carries a piece of my soul—because food isn’t just nourishment, it’s love served on a plate."<br>
+          <span class="float-end mt-2">
+            – Chef. Enzo Romano
+          </span>
+      </p>
+      "Hey there, I’m the chef behind this space, and I’m really glad you’re here. This whole journey started with something simple—a deep love for coffee and comfort food that brings people together. I’ve spent years in kitchens, learning, failing, starting over, and pouring everything I had into every dish and every cup. There were moments when I wasn’t sure it would work—late nights, tight budgets, and a lot of self-doubt—but I always came back to the idea that food and coffee can do more than just fill you up. They can create moments, spark conversations, and make people feel something real.<br><br>
+
+      That’s what this website is about. It’s not just a place to order—it’s a place built on heart, stories, and a little bit of hustle. Every recipe, every roast, every detail has a piece of me in it. I hope when you taste our food or sip our coffee, you feel that. Because more than anything, I want you to feel at home here. Thanks for being part of the journey."
+    </p>
+  </section>
+  
+  <!-- Order instructions-->
+  <section class="bg-gray-100 md:h-50 text-gray-700 text-4xl capitalize flex flex-col md:flex-row justify-around items-center p-4 md:p-25 gap-6 md:gap-2">
+    
+    <!-- Select dish -->
+    <div class="flex flex-col justify-between items-center gap-2">
+      <i class="fa-solid fa-hamburger"></i>
+      <span class="text-sm">Select dish</span>
+    </div>
+    
+    <i class="fa-solid fa-arrow-right rotate-90 md:rotate-0"></i>
+    
+    <!-- Select Quantity -->
+    <div class="flex flex-col justify-between items-center gap-2">
+      <i class="fa-solid fa-list"></i>
+      <span class="text-sm">Select quantity</span>
+    </div>
+    
+    <i class="fa-solid fa-arrow-right rotate-90 md:rotate-0"></i>
+    
+    <!-- Place order -->
+    <div class="flex flex-col justify-between items-center gap-2">
+      <i class="fa-solid fa-circle-check"></i>
+      <span class="text-sm">Place order</span>
+    </div>
+    
+    <i class="fa-solid fa-arrow-right rotate-90 md:rotate-0"></i>
+    
+    <div class="flex flex-col justify-between items-center gap-2">
+      <i class="fa-solid fa-smile-wink"></i>
+      <span class="text-sm">Enjoy!</span>
+    </div>
+  </section>
+  
+  <!-- Footer section -->
+  <footer class="bg-gray-950 text-white text-sm p-4 md:p-25">
+    
+    <!-- Both section flex parent -->
+    <div class="flex flex-col md:flex-row md:justify-between gap-4">
+      <!-- Contact section -->
+      <div>
+        <p class="font-bold text-xl mb-1">
+          Contact Us
+        </p>
+        <p class="mb-1">
+          <span class="font-bold">Address: </span>6th street, sector 26,<br>Los Angeles (100263)
+        </p>
+        <p>
+          <span class="font-bold">Mob:</span> +91 1234451234
+        </p>
+      </div>
+      
+      <!-- Social media section -->
+      <div id="contact" class="mb-3 md:mb-10">
+        <p class="font-bold text-xl">Checkout our Social Media page</p>
+        <p>
+          <a href="#">
+            <i class="fa-brands fa-facebook pr-1"></i>
+            Facebook
+          </a>
+        </p>
+        <p>
+          <a href="#">
+            <i class="fa-brands fa-linkedin pr-1"></i>
+            LinkedIn
+          </a>
+        </p>
+        <p>
+          <a href="#">
+            <i class="fa-brands fa-github pr-1"></i>
+            GitHub
+          </a>
+        </p>
+        <p>
+          <a href="#">
+            <i class="fa-brands fa-instagram pr-1"></i>
+            Instagram
+          </a>
+        </p>
+      </div>
+    </div>
+    <hr>
+    <p class="text-center md:mt-10 mt-3">
+      Created by Auminus (github:paritoshAuminus) &copy All rights reserved
+    </p>
+</footer>
+
+<!-- JS Link -->
+ <script src="script.js"></script>
+</body>
+
+</html>

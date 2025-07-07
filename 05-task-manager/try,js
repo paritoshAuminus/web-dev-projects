@@ -1,0 +1,12 @@
+let globalTasks = ['121212323123.3', '223231231231.3']
+
+function idGenerator() {
+    let x = Math.random();
+    return x;
+}
+
+let id = idGenerator();
+
+idChecker = globalTasks.find((item) => item == id);
+
+console.log(idChecker);

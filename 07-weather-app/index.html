@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 p-6 space-y-6">
+            <div class="text-2xl font-bold">Weather</div>
+            <nav class="space-y-4">
+                <div class="flex items-center space-x-2 text-gray-300 hover:text-white cursor-pointer">
+                    <span>🌤️</span>
+                    <span>Weather</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-300 hover:text-white cursor-pointer">
+                    <span>🌍</span>
+                    <span>Cities</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-300 hover:text-white cursor-pointer">
+                    <span>🗺️</span>
+                    <span>Map</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-300 hover:text-white cursor-pointer">
+                    <span>⚙️</span>
+                    <span>Settings</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="flex-1 p-8">
+            <!-- Search -->
+            <div class="mb-6">
+                <input type="text" placeholder="Search for cities"
+                    class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none" />
+            </div>
+
+            <!-- Current Weather -->
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold">Madrid</h2>
+                <p class="text-gray-400">Chance of rain: 0%</p>
+                <div class="flex items-center space-x-4 mt-4">
+                    <div class="text-6xl font-bold">31°</div>
+                    <div class="text-5xl">☀️</div>
+                </div>
+            </div>
+
+            <!-- Today's Forecast -->
+            <div class="mb-6">
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold mb-4">Today's Forecast</h3>
+                    <div class="grid grid-cols-6 text-center gap-2">
+                        <div>
+                            <p class="text-sm">6:00 AM</p>
+                            <p>☁️</p>
+                            <p>25°</p>
+                        </div>
+                        <div>
+                            <p class="text-sm">9:00 AM</p>
+                            <p>⛅</p>
+                            <p>28°</p>
+                        </div>
+                        <div>
+                            <p class="text-sm">12:00 PM</p>
+                            <p>☀️</p>
+                            <p>33°</p>
+                        </div>
+                        <div>
+                            <p class="text-sm">3:00 PM</p>
+                            <p>☀️</p>
+                            <p>34°</p>
+                        </div>
+                        <div>
+                            <p class="text-sm">6:00 PM</p>
+                            <p>☀️</p>
+                            <p>32°</p>
+                        </div>
+                        <div>
+                            <p class="text-sm">9:00 PM</p>
+                            <p>🌥️</p>
+                            <p>30°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Conditions -->
+            <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                <h3 class="text-xl font-semibold mb-4">Air Conditions</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-gray-400">Real Feel</p>
+                        <p class="text-xl">30°</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Wind</p>
+                        <p class="text-xl">0.2 km/h</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Chance of Rain</p>
+                        <p class="text-xl">0%</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">UV Index</p>
+                        <p class="text-xl">3</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 7-Day Forecast -->
+        <aside class="w-64 bg-gray-800 p-6 space-y-4">
+            <h3 class="text-xl font-bold mb-2">7-Day Forecast</h3>
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span>Today</span><span>☀️ 36/22</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Tue</span><span>☀️ 37/21</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Wed</span><span>☀️ 37/21</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Thu</span><span>☁️ 37/21</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Fri</span><span>☁️ 37/21</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Sat</span><span>🌧️ 37/21</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Sun</span><span>⚡ 37/21</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

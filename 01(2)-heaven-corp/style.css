@@ -1,0 +1,11 @@
+body {
+    box-sizing: border-box;
+}
+
+.mainleft {
+  background-image: url(main_image.jpg);
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+

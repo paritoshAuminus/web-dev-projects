@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col items-center px-4 py-8">
+
+    <!-- Header -->
+    <header class="mb-6 w-full max-w-3xl text-center">
+        <h1 class="text-3xl font-bold">📝 Task Manager</h1>
+        <p class="text-gray-500 mt-1">Track your tasks with tags, deadlines, and status</p>
+    </header>
+
+    <!-- Task success block -->
+    <section id="success-block" class="hidden w-full max-w-3xl bg-white shadow rounded-xl p-4 mb-6">
+        <div class="flex flex-col items-center justify-center h-full">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-green-500 mb-4">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h2 class="text-xl font-semibold text-center text-green-600">Task added successfully</h2>
+        </div>
+    </section>
+
+    <!-- Task Form -->
+    <section id="add-task-block" class="w-full max-w-3xl bg-white shadow rounded-xl p-4 mb-6">
+        <h2 class="text-xl font-semibold mb-4">Add New Task</h2>
+        <form id="form" class="grid gap-4 sm:grid-cols-2">
+            <input type="text" placeholder="Title" id="title" class="p-2 border rounded col-span-2" />
+            <textarea placeholder="Description" id="description" class="p-2 border rounded col-span-2"></textarea>
+            <input type="date" id="deadline" class="p-2 border rounded" />
+            <input type="text" placeholder="Tags (comma-separated)" id="tags" class="p-2 border rounded" />
+            <button type="submit" class="col-span-2 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                Add Task
+            </button>
+        </form>
+    </section>
+
+    <!-- Filters -->
+    <section id="show-cards" class="w-full max-w-3xl mb-4 flex flex-wrap items-center gap-2">
+        <button id="show-all" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">All</button>
+        <button id="show-completed" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Completed</button>
+        <button id="show-pending" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Pending</button>
+        <button id="show-overdue" class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">Overdue</button>
+    </section>
+
+    <!-- Task List -->
+    <section id="taskList" class="w-full max-w-3xl space-y-4">
+
+        <!-- The task appears here dynamically -->
+
+        <!-- Repeat similar task cards dynamically -->
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

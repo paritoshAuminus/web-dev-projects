@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-amber-roast</title>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body class="box-border bg-gray-950">
+
+    <!-- Header section -->
+  <section class="container-lg sticky top-0 left-0 right-0 flex justify-between items-center px-4 md:px-7 py-5 text-white bg-gray-950 z-90">
+    <div class="text-xl md:text-3xl">
+      <i class="fa-solid fa-mug-hot text-2xl md:text-4xl text-orange-400"></i>
+      <span class="px-2 text-orange-400">Ember Roast</span>
+    </div>
+    <button class="block md:hidden">
+      <i onclick="sidebarToggleOn()" class="fa-solid fa-bars text-xl pr-3 active:text-orange-400"></i>
+    </button>
+    <div class="hidden md:flex items-center text-2xl w-110 gap-6">
+      <a href="index.html" class="hover:text-orange-400 cursor-pointer">Home</a>
+      <a href="#menu" class="hover:text-orange-400 cursor-pointer">Menu</a>
+      <a href="#about" class="hover:text-orange-400 cursor-pointer">About</a>
+      <a href="#contact" class="hover:text-orange-400 cursor-pointer">Contact</a>
+      <a href="login.html" target="_blank" class="hover:text-orange-400 cursor-pointer">Log In</a>
+    </div>
+  </section>
+  
+  <!-- Side bar (only visible on small screens) -->
+   <div id="sidebar" class="hidden justify-center md:hidden fixed right-0 top-0 h-full w-64 bg-gray-950 text-white z-100">
+    <div class="flex flex-col p-5 gap-2 items-center text-xl w-full">
+      <i onclick="sidebarToggleOff()" class="fa-solid fa-xmark float-end fixed right-5 text-2xl active:text-orange-400"></i>
+      <a href="index.html" class="active:text-orange-400">Home</a>
+      <a href="index.html" class="active:text-orange-400">Menu</a>
+      <a href="index.html" class="active:text-orange-400">About</a>
+      <a href="index.html" class="active:text-orange-400">Contact</a>
+    </div>
+   </div>
+
+   <!-- Parent section -->
+   <section class="flex justify-center items-center mt-8">
+
+    <!-- The white-colored dish information box (child section) -->
+    <div class="h-210 sm:h-200 w-180 bg-slate-50 rounded-2xl p-6 mx-4 text-xl text-slate-700">
+
+        <!-- Upper div (item info) -->
+        <div class="flex items-center gap-10 mb-16">
+            <!-- Item images -->
+            <div id="item-image" class="h-25 w-25 sm:h-50 sm:w-50 bg-cover bg-center rounded-full border border-slate-400 shadow-2xl"></div>
+            <!-- Item description -->
+            <div class="w-2/3 flex flex-col justify-center items-center gap-4">
+                <h3 id="item-name" class="text-2xl sm:text-3xl font-bold">Product name</h3>
+                <p id="item-description" class="text-xl sm:text-2xl">Item description Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, debitis placeat eligendi iusto esse saepe.</p>
+                <p id="item-price-start" class="font-bold"></p>
+            </div>
+        </div>
+        <!-- Middle div (form) -->
+        <form id="form" class="p-8 capitalize font-bold">
+            <label for="item-quantity" class="">Quantity</label>
+            <input type="number" id="item-quantity" class="border border-slate-400 border-2 rounded-lg w-10 ml-2" min="1" max="5">
+            <div class="flex flex-col items-start gap-4 mt-6 text-white">
+                <button type="submit" class="p-3 w-30 bg-orange-400 rounded-xl cursor-pointer hover:bg-orange-500">Confirm</button>
+                <button type="reset" class="fa-solid fa-rotate-right p-3 w-30 bg-orange-400 rounded-xl cursor-pointer hover:bg-orange-500"></button>
+            </div>
+        </form>
+
+        <!-- Lower div (Order details) -->
+        <div class="p-8">
+            <p class="h3 font-bold text-2xl">Order details</p>
+            <!-- Parent for key-value pairs printed below -->
+            <div class="flex justify-between text-xl text-slate-700">
+                <!-- Keys -->
+                <div>
+                    <p>Item(s)</p>
+                    <p>Price</p>
+                    <p>Quantity</p>
+                    <p class="font-bold">Total</p>
+                </div>
+                <!-- Values -->
+                <div class="text-right">
+                    <p id="item-name-end">Item</p>
+                    <p id="item-price-end"></p>
+                    <p id="item-quantity-end">Submit your quantity</p>
+                    <p id="total-amount" class="font-bold text-emerald-500">$0</p>
+                </div>
+            </div>
+        </div>
+        <button class="p-3 text-white font-bold text-xl bg-orange-400 hover:bg-orange-500 float-end rounded-xl">Place Order</button>
+    </div>
+   </section>
+
+   <!-- JS file links -->
+    <script src="script.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>
