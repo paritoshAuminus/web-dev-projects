@@ -10,7 +10,7 @@ const Header = () => {
                     <Link className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                         <span className="ml-3 text-3xl flex justify-between">Paritosh <LiaRegistered className='text-2xl'/></span>
                     </Link>
-                    <nav className="md:ml-auto flex flex-wrap items-center gap-4 font-semibold justify-center">
+                    <nav className="md:ml-auto flex flex-wrap items-center gap-4 justify-center">
                         <Link to='/' className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Home</Link>
                         <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
                         <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>

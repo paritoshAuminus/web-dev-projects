@@ -1,16 +1,25 @@
 import React from 'react'
 import { FaCircle } from 'react-icons/fa'
+import { HiArrowTurnDownRight } from 'react-icons/hi2'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <>
-        <footer className='h-300px md:h-[500px] py-8 flex justify-center text-white items-center bg-zinc-900 font-semibold'>
-            <div className='container h-full w-full bg-black flex flex-col justify-center items-center'>
-                <span className='p-1 border-1 border-white uppercase rounded-full flex gap-1 items-center w-60'><FaCircle className='text-lime-500' />Have a project in mind?</span>
-                <span className='text-8xl text-wrap text-center'>Let's turn your ideas into reality</span>
-                <span></span>
-            </div>
-        </footer>
+      <footer className='h-300px md:h-[500px] flex flex-col pt-8 justify-center text-white items-center bg-zinc-900 font-semibold'>
+        <div className='container h-full w-full p-5 md:p-0 bg-black flex flex-col gap-4 justify-center items-center'>
+          <span className='px-1 py-0.5 text-sm border-1 border-white uppercase rounded-full flex gap-1 items-center'><FaCircle className='text-lime-500' />Have a project in mind?</span>
+          <span className='text-5xl md:text-7xl text-wrap text-center'>Let's turn your ideas<br />into reality</span>
+          <span className='text-xl flex flex-col gap-1'><a href="mailto:paritoshverma2038@gmail.com" className='flex items-center gap-1'><HiArrowTurnDownRight />paritoshverma2038@gmail.com</a><hr className='border-1 text-gray-500' /></span>
+        </div>
+        <nav className="m-5 flex flex-col sm:flex-row flex-wrap items-center gap-1 font-normal justify-center">
+          <Link to='/' className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Home</Link>
+          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
+          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
+          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
+          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
+        </nav>
+      </footer>
     </>
   )
 }
