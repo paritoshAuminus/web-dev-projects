@@ -1,6 +1,6 @@
 import React from 'react'
 import { BiCopyright } from 'react-icons/bi'
-import { FaAsterisk, FaCircle } from 'react-icons/fa'
+import { FaAsterisk, FaCircle, FaCubes, FaFacebook, FaLinkedinIn } from 'react-icons/fa'
 import { HiArrowTurnDownRight } from 'react-icons/hi2'
 import { Link } from 'react-router-dom'
 import herobg from '../assets/herobg.png' // keep import for possible future use
@@ -9,9 +9,61 @@ import { HiMiniCubeTransparent } from 'react-icons/hi2'
 import { RiServiceFill } from 'react-icons/ri'
 import MyWorkCard from '../components/MyWorkCard'
 import workArray from '../mywork'
+import WorkFlow from '../components/WorkFlow'
+import workflow from '../workflow'
+import Card2 from '../components/Card2'
+import { PiStarFourFill } from 'react-icons/pi'
+import { SiVorondesign } from 'react-icons/si'
+import aboutMe from '../assets/aboutMe.png'
+import { GrGithub } from 'react-icons/gr'
+import { LiaLinkedin } from 'react-icons/lia'
 
 
 const Home = () => {
+
+
+    const cardData = [
+        {
+            heading: 'Web Design',
+            para: 'Creating visually stunning and user-friendly websites is at the heart of what I do.',
+            icon: <SiVorondesign />,
+            iconText: 'text-gray-50',
+            textColor: 'text-black',
+            bgcolor: 'bg-lime-400',
+            pointers: [
+                'custom tailored design',
+                'Responsive layouts',
+                'fully functional frontend'
+            ]
+        },
+        {
+            heading: 'Development',
+            para: 'I bring your designs to life with clean, efficient, and high-performing code.',
+            icon: <PiStarFourFill />,
+            iconText: '',
+            textColor: 'text-white',
+            bgcolor: 'bg-zinc-900',
+            pointers: [
+                'HTML, CSS & JS Expertise',
+                'Cross-Browser Compatibility',
+                'Faster Load Times'
+            ]
+        },
+        {
+            heading: 'Brand Identity',
+            para: 'Building a strong brand identity is essential for standing out in a crowded market.',
+            icon: <FaCubes />,
+            iconText: '',
+            textColor: 'text-black',
+            bgcolor: 'bg-stone-50',
+            pointers: [
+                'logo designs',
+                'cohesive color palletes',
+                'brand guidlines'
+            ]
+        }
+    ]
+
     return (
         <>
             <section className='relative bg-black flex flex-col p-5 md:p-7 gap-3 md:gap-7 justify-center items-center text-white overflow-hidden'>
@@ -70,15 +122,87 @@ const Home = () => {
                 <Link className='mx-auto py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Browse all work</Link>
             </section>
             <section className='bg-white py-16 md:py-20 px-10 flex flex-col md:flex-row'>
-                <div className='flex flex-col gap-10'>
+                <div className='w-full md:w-1/2 flex flex-col gap-10 mb-8'>
                     <div>
                         <span className='text-sm px-1 py-0.5 mb-1.5 w-32 border-1 border-black uppercase rounded-full flex gap-1 items-center'><FaCircle className='text-lime-400' />My process</span>
                         <span className='text-6xl md:w-7xl mb-12'>My creative workflow</span>
                     </div>
                     <Link className='py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
                 </div>
-                <div>
-                    
+                <div className='w-full md:w-1/2'>
+                    {workflow.map((item) => (
+                        <WorkFlow
+                            key={item.index}
+                            heading={item.heading}
+                            para={item.para}
+                        />
+                    ))}
+                </div>
+            </section>
+            <section className='bg-black text-white py-16 md:py-20 px-10'>
+                <div className='flex flex-col gap-1'>
+                    <span className='text-sm px-1 py-0.5 mb-1.5 w-32 border-1 border-gray-500 uppercase rounded-full flex gap-1 items-center'><FaCircle className='text-lime-400' />What I offer</span>
+                    <span className='text-4xl md:text-7xl capitalize'>Empowering brands<br />through design</span>
+                </div>
+                <div className='py-16 grid grid-cols-1 sm:grid-cols-3 gap-5'>
+                    {cardData.map((item) => (
+                        <Card2
+                            icon={item.icon}
+                            heading={item.heading}
+                            iconText={item.iconText}
+                            bgcolor={item.bgcolor}
+                            textColor={item.textColor}
+                            para={item.para}
+                            pointerOne={item.pointers[0]}
+                            pointerTwo={item.pointers[1]}
+                            pointerThree={item.pointers[2]}
+                        />
+                    ))}
+                </div>
+            </section>
+            <section className='flex flex-col md:flex-row py-16 md:py-32 px-10 gap-12'>
+                <div className='w-full md:w-1/2 flex items-center '>
+                    <div className='w-96 bg-gradient-to-b from-lime-300 to-lime-50 rounded-3xl'>
+                        <img src={aboutMe} alt="My image" />
+                    </div>
+                </div>
+                <div className='p-10 flex flex-col gap-7'>
+                    <div>
+                        <span className='text-sm px-1 py-0.5 w-28 mb-1.5 border-1 border-gray-500 uppercase rounded-full flex gap-1 items-center'><FaCircle className='text-lime-300' />about me</span>
+                        <span className='text-5xl md:text-7xl capitalize'>Discover my journey</span>
+                    </div>
+                    <p>Hello! I'm Paritosh, a passionate Web Designer with over a year of experience in creating visually appealing and user-friendly websites. My mission is to bring your brand to life through innovative design solutions tailored to your unique needs.</p>
+                    <div className='flex gap-4 text-4xl'>
+                        <Link className='hover:text-gray-700'><FaFacebook /></Link>
+                        <Link className='hover:text-gray-700'><GrGithub /></Link>
+                        <Link className='hover:text-gray-700'><FaLinkedinIn /></Link>
+                    </div>
+                </div>
+            </section>
+            <section className='grid grid-cols-1 sm:grid-cols-3 bg-gradient-to-b from-lime-400 to-lime-200 py-20 px-10 gap-5'>
+                <div className='p-5 flex flex-col gap-5'>
+                    <span className='text-6xl'>01+</span>
+                    <hr />
+                    <div className='flex flex-col gap-1'>
+                        <p className='text-2xl capitalize'>year of experience</p>
+                        <p>Significant experience in delivering exceptional projects.</p>
+                    </div>
+                </div>
+                <div className='p-5 flex flex-col gap-5'>
+                    <span className='text-6xl'>10+</span>
+                    <hr />
+                    <div className='flex flex-col gap-1'>
+                        <p className='text-2xl capitalize'>Projects built</p>
+                        <p>Tailored for real world application and various organisations.</p>
+                    </div>
+                </div>
+                <div className='p-5 flex flex-col gap-5'>
+                    <span className='text-6xl'>98%</span>
+                    <hr />
+                    <div className='flex flex-col gap-1'>
+                        <p className='text-2xl capitalize'>Client satisfaction</p>
+                        <p>I build long-term partnerships through proven results.</p>
+                    </div>
                 </div>
             </section>
         </>
