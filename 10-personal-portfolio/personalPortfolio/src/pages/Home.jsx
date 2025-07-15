@@ -16,7 +16,10 @@ import { PiStarFourFill } from 'react-icons/pi'
 import { SiVorondesign } from 'react-icons/si'
 import aboutMe from '../assets/aboutMe.png'
 import { GrGithub } from 'react-icons/gr'
-import { LiaLinkedin } from 'react-icons/lia'
+import CardMyStory from '../components/CardMyStory'
+import CardTestimonial from '../components/CardTestimonial'
+import user1 from '../assets/user1.jpg'
+import user2 from '../assets/user2.jpg'
 
 
 const Home = () => {
@@ -63,6 +66,8 @@ const Home = () => {
             ]
         }
     ]
+
+    const testimonialData = []
 
     return (
         <>
@@ -204,6 +209,27 @@ const Home = () => {
                         <p>I build long-term partnerships through proven results.</p>
                     </div>
                 </div>
+            </section>
+            <section className='grid grid-cols-1 md:grid-cols-3 gap-5 px-10 p-20 md:py-28 bg-black'>
+                    <CardMyStory />
+                    <CardTestimonial 
+                        textColor={'text-white'}
+                        bgColor={'bg-zinc-900'}
+                        para={'"Working with Paritosh was a game-changer for our online presence. The new website exceeded our expectations in both design and functionality."'}
+                        source={user1}
+                        clientName={'Jerome Bell'}
+                        clientCompany={'CTO, Waverio'}
+                        companyText={'text-gray-300'}
+                        />
+                    <CardTestimonial
+                        textColor={'text-black'}
+                        bgColor={'bg-white'}
+                        para={'"Paritosh delivered a stunning website that truly reflects our brand\'s essence. He continuously involves in feedbacks. Highly recommend his expertise!"'}
+                        source={user2}
+                        clientName={'Wade Warren'}
+                        clientCompany={'Founder, Creaty'}
+                        companyText={'text-gray-500'}
+                    />
             </section>
         </>
     )
