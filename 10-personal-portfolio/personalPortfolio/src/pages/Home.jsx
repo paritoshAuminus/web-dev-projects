@@ -178,9 +178,9 @@ const Home = () => {
                     </div>
                     <p>Hello! I'm Paritosh, a passionate Web Designer with over a year of experience in creating visually appealing and user-friendly websites. My mission is to bring your brand to life through innovative design solutions tailored to your unique needs.</p>
                     <div className='flex gap-4 text-4xl'>
-                        <Link className='hover:text-gray-700'><FaFacebook /></Link>
-                        <Link className='hover:text-gray-700'><GrGithub /></Link>
-                        <Link className='hover:text-gray-700'><FaLinkedinIn /></Link>
+                        <Link className='hover:text-lime-400 transition-all'><FaFacebook /></Link>
+                        <Link className='hover:text-lime-400 transition-all'><GrGithub /></Link>
+                        <Link className='hover:text-lime-400 transition-all'><FaLinkedinIn /></Link>
                     </div>
                 </div>
             </section>
