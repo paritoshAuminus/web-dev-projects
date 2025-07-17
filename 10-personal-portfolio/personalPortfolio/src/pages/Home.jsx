@@ -23,7 +23,8 @@ import user2 from '../assets/user2.jpg'
 
 
 const Home = () => {
-
+    
+    scrollTo(0, 0);
 
     const cardData = [
         {

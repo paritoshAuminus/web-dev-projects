@@ -9,6 +9,9 @@ import pic3 from '../assets/travelPics/pic3.jpg'
 import pic4 from '../assets/travelPics/pic4.jpg'
 
 const About = () => {
+
+    scrollTo(0, 0);
+
     return (
         <>
             <section className='bg-black text-white px-10 py-28'>

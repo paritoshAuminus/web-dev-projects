@@ -13,11 +13,11 @@ const Footer = () => {
           <span className='text-xl flex flex-col gap-1'><a href="mailto:paritoshverma2038@gmail.com" className='flex items-center gap-1'><HiArrowTurnDownRight />paritoshverma2038@gmail.com</a><hr className='border-1 text-gray-500' /></span>
         </div>
         <nav className="m-5 flex flex-col sm:flex-row flex-wrap items-center gap-1 font-normal justify-center">
-          <Link to='/' className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Home</Link>
-          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
-          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
-          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
-          <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
+          <Link to={'/'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Home</Link>
+          <Link to={'/about'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
+          <Link to={'/projects'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
+          <Link to={''} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
+          <Link to={''} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
         </nav>
       </footer>
     </>
