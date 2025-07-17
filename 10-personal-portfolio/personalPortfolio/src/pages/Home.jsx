@@ -124,7 +124,7 @@ const Home = () => {
                         )
                     })}
                 </div>
-                <Link className='mx-auto py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Browse all work</Link>
+                <Link to={'/projects'} className='mx-auto py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Browse all work</Link>
             </section>
             <section className='bg-white py-16 md:py-20 px-10 flex flex-col md:flex-row'>
                 <div className='w-full md:w-1/2 flex flex-col gap-10 mb-8'>

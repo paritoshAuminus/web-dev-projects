@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 
+
 * {
     box-sizing: border-box;
     font-family: "Figtree", sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
 }

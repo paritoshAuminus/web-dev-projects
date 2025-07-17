@@ -11,9 +11,9 @@ const Header = () => {
                         <span className="ml-3 text-3xl flex justify-between">Paritosh <LiaRegistered className='text-2xl'/></span>
                     </Link>
                     <nav className="md:ml-auto flex flex-wrap items-center gap-4 justify-center">
-                        <Link to={'/'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Home</Link>
+                        <Link to={'/'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400" autoFocus>Home</Link>
                         <Link to={'/about'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
-                        <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
+                        <Link to={'/projects'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
                         <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
                         <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
                     </nav>

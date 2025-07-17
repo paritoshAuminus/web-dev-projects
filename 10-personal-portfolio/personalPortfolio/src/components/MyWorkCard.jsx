@@ -10,7 +10,7 @@ const MyWorkCard = (props) => {
               <span>2025</span>
             </div>
             <div className='overflow-hidden border rounded-t-4xl'>
-              <img src={props.image} alt="project image" />
+              <img src={props.image} alt="project image"/>
             </div>
         </section>
       </>
