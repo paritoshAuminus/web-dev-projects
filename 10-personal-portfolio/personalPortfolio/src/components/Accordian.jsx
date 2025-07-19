@@ -6,7 +6,7 @@ const Accordian = (props) => {
                     <span>{props.question}</span>
                     <div className='text-2xl'>{props.icon}</div>
                 </div>
-                <div className='mt-5'>{props.answer}</div>
+                <div className='mt-5 text-sm'>{props.answer}</div>
             </div>
             <hr className='my-5'/>
         </>

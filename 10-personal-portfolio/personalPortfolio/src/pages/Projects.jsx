@@ -7,8 +7,6 @@ import { FaPlusCircle } from 'react-icons/fa'
 
 const Projects = () => {
 
-  scrollTo(0, 0);
-
   const [category, setCategory] = useState('all');
   const [extenderQ1, setExtenderQ1] = useState(false);
   const [extenderQ2, setExtenderQ2] = useState(false);
@@ -55,7 +53,7 @@ const Projects = () => {
           <Accordian
             onClick={() => setExtenderQ1(!extenderQ1)}
             question={'What services do you offer?'}
-            answer={'answer'}
+            answer={'I offer a range of services including web design, front-end development, UX/UI design, responsive design, e-commerce solutions, and brand identity creation. Visit my Services page for a detailed overview.'}
             icon={<FaPlusCircle />}
           />
           <Accordian

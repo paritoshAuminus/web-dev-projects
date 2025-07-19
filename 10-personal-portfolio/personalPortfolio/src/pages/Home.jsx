@@ -23,7 +23,7 @@ import user2 from '../assets/user2.jpg'
 
 
 const Home = () => {
-    
+
     scrollTo(0, 0);
 
     const cardData = [
@@ -212,25 +212,25 @@ const Home = () => {
                 </div>
             </section>
             <section className='grid grid-cols-1 md:grid-cols-3 gap-5 px-10 p-20 md:py-28 bg-black'>
-                    <CardMyStory />
-                    <CardTestimonial 
-                        textColor={'text-white'}
-                        bgColor={'bg-zinc-900'}
-                        para={'"Working with Paritosh was a game-changer for our online presence. The new website exceeded our expectations in both design and functionality."'}
-                        source={user1}
-                        clientName={'Jerome Bell'}
-                        clientCompany={'CTO, Waverio'}
-                        companyText={'text-gray-300'}
-                        />
-                    <CardTestimonial
-                        textColor={'text-black'}
-                        bgColor={'bg-white'}
-                        para={'"Paritosh delivered a stunning website that truly reflects our brand\'s essence. He continuously involves in feedbacks. Highly recommend his expertise!"'}
-                        source={user2}
-                        clientName={'Wade Warren'}
-                        clientCompany={'Founder, Creaty'}
-                        companyText={'text-gray-500'}
-                    />
+                <CardMyStory />
+                <CardTestimonial
+                    textColor={'text-white'}
+                    bgColor={'bg-zinc-900'}
+                    para={'"Working with Paritosh was a game-changer for our online presence. The new website exceeded our expectations in both design and functionality."'}
+                    source={user1}
+                    clientName={'Jerome Bell'}
+                    clientCompany={'CTO, Waverio'}
+                    companyText={'text-gray-300'}
+                />
+                <CardTestimonial
+                    textColor={'text-black'}
+                    bgColor={'bg-white'}
+                    para={'"Paritosh delivered a stunning website that truly reflects our brand\'s essence. He continuously involves in feedbacks. Highly recommend his expertise!"'}
+                    source={user2}
+                    clientName={'Wade Warren'}
+                    clientCompany={'Founder, Creaty'}
+                    companyText={'text-gray-500'}
+                />
             </section>
         </>
     )

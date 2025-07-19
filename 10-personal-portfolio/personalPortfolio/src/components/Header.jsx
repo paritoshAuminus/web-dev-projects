@@ -14,8 +14,8 @@ const Header = () => {
                         <Link to={'/'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400" autoFocus>Home</Link>
                         <Link to={'/about'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
                         <Link to={'/projects'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
-                        <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
-                        <Link className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
+                        <Link to={'/services'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
+                        <Link to={'/contact'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
                     </nav>
                     <Link className="inline-flex items-center font-semibold bg-black border-2 border-white hover:text-black py-2 px-3 hover:border-lime-400 hover:bg-lime-400 rounded-full text-base mt-4 md:mt-0">
                         Contact Me
