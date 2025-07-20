@@ -45,6 +45,9 @@ const cardData = [
 ]
 
 const Services = () => {
+
+    scrollTo(0, 0)
+
     return (
         <>
             <div className='text-white bg-black py-16 md:py-20 px-10'>

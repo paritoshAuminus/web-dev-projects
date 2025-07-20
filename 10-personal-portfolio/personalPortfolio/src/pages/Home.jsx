@@ -82,7 +82,7 @@ const Home = () => {
                 </div>
                 <div className='w-full flex flex-col gap-8 md:gap-12 justify-center md:justify-start mb-32 z-10'>
                     <p className='text-sm text-left w-full md:w-1/4'>I blend artistry with cutting-edge technology to deliver websites that not only look stunning but also<br />drive results.</p>
-                    <Link className='py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
+                    <Link to={'/contact'} className='py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
                 </div>
             </section>
             <section className='py-16 md:py-20 px-10 bg-stone-100'>
@@ -133,7 +133,7 @@ const Home = () => {
                         <span className='text-sm px-1 py-0.5 mb-1.5 w-32 border-1 border-black uppercase rounded-full flex gap-1 items-center'><FaCircle className='text-lime-400' />My process</span>
                         <span className='text-6xl md:w-7xl mb-12'>My creative workflow</span>
                     </div>
-                    <Link className='py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
+                    <Link to={'/contact'} className='py-3 text-sm flex justify-center items-center gap-1 text-black w-52 bg-lime-400 hover:bg-lime-300 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
                 </div>
                 <div className='w-full md:w-1/2'>
                     {workflow.map((item) => (

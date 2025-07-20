@@ -16,8 +16,8 @@ const Footer = () => {
           <Link to={'/'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Home</Link>
           <Link to={'/about'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">About</Link>
           <Link to={'/projects'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Projects</Link>
-          <Link to={''} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
-          <Link to={''} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
+          <Link to={'/services'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Services</Link>
+          <Link to={'/contact'} className="mr-5 hover:text-lime-300 transition-all focus:text-lime-400">Contact</Link>
         </nav>
       </footer>
     </>

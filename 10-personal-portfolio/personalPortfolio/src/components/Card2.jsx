@@ -21,7 +21,7 @@ const Card2 = (props) => {
                     <span>{props.pointerThree}</span>
                 </div>
                 <div className='flex justify-center sm:justify-start items-center'>
-                    <Link className='p-3 text-sm flex justify-center items-center gap-1 text-black bg-lime-200 hover:bg-lime-100 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
+                    <Link to={'/contact'} className='p-3 text-sm flex justify-center items-center gap-1 text-black bg-lime-200 hover:bg-lime-100 rounded-full'><HiArrowTurnDownRight />Schedule a consultation</Link>
                 </div>
             </div>
         </>
