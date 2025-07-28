@@ -1,62 +1,78 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
 
 const App = () => {
-
-  const [task, setTask] = useState(undefined)
-  const [taskList, setTaskList] = useState([])
-
-  const [edit, setEdit] = useState(false)
-
-  console.log(taskList)
-
+  const [task, setTask] = useState('');
+  const [taskList, setTaskList] = useState([]);
+  const [editedTask, setEditedTask] = useState('');
+  const [editingIndex, setEditingIndex] = useState(null); // null means no item is being edited
 
   function handleSubmit(task) {
-    setTaskList(previous => [...previous, task])
-    setTask('')
+    if (task.trim()) {
+      setTaskList(prev => [...prev, task]);
+      setTask('');
+    }
   }
 
-  function handleEdit(e, indexToDelete) {
-    setEdit(!edit)
-    setTaskList(prev => prev.filter((_, index) => index !== indexToDelete));
-    // push the item in the same index as the previously deleted one with the help of e.target in the input
+  function startEditing(index) {
+    setEditingIndex(index);
+    setEditedTask(taskList[index]); // pre-fill input with existing task
+  }
+
+  function applyEdit(index) {
+    if (editedTask.trim()) {
+      setTaskList(prev =>
+        prev.map((item, i) => (i === index ? editedTask : item))
+      );
+      setEditingIndex(null); // done editing
+      setEditedTask('');
+    }
   }
 
   function deleteItem(indexToDelete) {
     setTaskList(prev => prev.filter((_, index) => index !== indexToDelete));
   }
 
-
-
   return (
     <>
       <div>
-        <form onSubmit={(e) => {
-          e.preventDefault()
-          handleSubmit(task)
-        }}>
-
-          <input type="text"
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(task);
+          }}
+        >
+          <input
+            type="text"
             onChange={(e) => setTask(e.target.value)}
             value={task}
           />
-          <button type='submit'>Add task</button>
+          <button type="submit">Add task</button>
         </form>
         <ul>
-          {taskList.map((item, index) => {
-            return (
-              <li key={index}>
-                {item}
-                {edit && <span><input type='text'/><button onClick={() => handleEdit(index)}>Done</button></span>}
-                <button onClick={() => deleteItem(index)}>Delete</button>
-                <button onClick={() => setEdit(!edit)}>Edit</button>
-              </li>
-            )
-          })}
+          {taskList.map((item, index) => (
+            <li key={index}>
+              {editingIndex === index ? (
+                <>
+                  <input
+                    type="text"
+                    value={editedTask}
+                    onChange={(e) => setEditedTask(e.target.value)}
+                  />
+                  <button onClick={() => applyEdit(index)}>Done</button>
+                </>
+              ) : (
+                <>
+                  {item}
+                  <button onClick={() => deleteItem(index)}>Delete</button>
+                  <button onClick={() => startEditing(index)}>Edit</button>
+                </>
+              )}
+            </li>
+          ))}
         </ul>
-
       </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
