@@ -5,35 +5,36 @@ const App = () => {
   const [task, setTask] = useState('')
   const [taskList, setTaskList] = useState([])
 
+  function handleChange(e) {
+    setTask(prev => prev = e.target.value)
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault()
     setTaskList(prev => [...prev, task])
     setTask('')
   }
 
-  const handleDelete = () => {
-    let itemToDelete = taskList.indexOf((i) => i == e.target.value)
-    taskList.splice(itemToDelete, 1)
+  function handleDelete(item) {
+    setTaskList(taskList.filter((i) => i !== item))
   }
-
 
   return (
     <>
-      <form onSubmit={handleSubmit} className='p-3 flex gap-3'>
-        <input type="text" value={task} onChange={(e) => setTask(e.target.value)} className='border-1 border-black px-2 rounded-md'/>
-        <button type='submit' className='border-1 border-black hover:bg-indigo-500 py-1 px-2 rounded-lg cursor-pointer'>Add Task</button>
+      <form action="" onSubmit={handleSubmit} className='flex gap-3'>
+        <input type="text" onChange={handleChange} value={task} className='border-1'/>
+        <button type='submit' className='bg-indigo-400 text-white'>Add task</button>
       </form>
-      <ul>
-        {taskList.map((item, index) => (
-          <>
-          <div key={index} className='flex gap-3 items-center p-3'>
-            <li>{item}</li><button onClick={handleDelete} className='px-3 py-1 border-1 border-black cursor-pointer rounded-lg hover:bg-red-300 transition-all delay-75'>Delete</button>
-          </div>
-          </>
-        ))}
-      </ul>
-      
+      <div>
+        <ul>
+          {taskList.map((item, index) => (
+            <li key={index} className='flex gap-3'>
+            <span>{item}</span>
+            <button onClick={() => handleDelete(item)} className='bg-red-400 text-white'>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   )
 }
