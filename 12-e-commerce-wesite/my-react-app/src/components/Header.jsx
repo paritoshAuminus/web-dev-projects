@@ -43,10 +43,16 @@ const Header = () => {
         </div>
 
         <div className='w-2xl bg-white p-1'>
-          <input type="text"/>
-          <button className='bg-black float-end h-full px-8 text-sm font-bold flex gap-2 items-center' aria-placeholder='Search the store'><IoSearch className='text-lg'/>Search</button>
+          <input type="text" className='h-full text-gray-600 text-sm w-4/5 px-3 outline-none' placeholder='Search the store' />
+          <button className='bg-black float-end h-full w-1/5 text-sm font-bold flex gap-2 justify-center items-center cursor-pointer'><IoSearch className='text-lg' />Search</button>
         </div>
-        <div><LuPhoneCall /></div>
+        <div className='flex gap-3 items-center'>
+          <LuPhoneCall className='text-2xl'/>
+          <div className='flex flex-col text-md'>
+            <span>Whatsapp:</span>
+            <a className='font-semibold cursor-pointer' tel='8630522723'>+91 8630522723</a>
+          </div>
+        </div>
       </search>
     </>
   )
